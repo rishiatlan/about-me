@@ -438,6 +438,20 @@ section.alt-bg {
   opacity: 0.8;
 }
 
+.logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.logo-img:hover {
+  opacity: 0.8;
+  filter: grayscale(0%);
+}
+
 /* --- Education --- */
 .education-grid {
   display: grid;
