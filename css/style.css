@@ -611,13 +611,10 @@ section.alt-bg {
   margin-bottom: 0;
 }
 
-.footer-analytics a {
-  color: var(--color-text-secondary);
-  text-decoration: underline;
-}
-
-.footer-analytics a:hover {
-  color: var(--color-accent);
+.visitor-counter {
+  display: inline;
+  vertical-align: baseline;
+  height: 1em;
 }
 
 /* ═══════════════════════════════════════════
