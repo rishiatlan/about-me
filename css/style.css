@@ -359,6 +359,30 @@ section.alt-bg {
   gap: 4px;
 }
 
+/* --- Projects Listing Page --- */
+.projects-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .projects-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects-view-all {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.projects-view-all a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 /* --- Skills / Expertise --- */
 .expertise-grid {
   display: grid;
