@@ -452,6 +452,14 @@ section.alt-bg {
   filter: grayscale(0%);
 }
 
+.logo-img.logo-invert {
+  filter: grayscale(100%) invert(1);
+}
+
+.logo-img.logo-invert:hover {
+  filter: invert(1);
+}
+
 /* --- Education --- */
 .education-grid {
   display: grid;
