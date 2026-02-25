@@ -652,8 +652,7 @@ section.alt-bg {
 
 .visitor-counter {
   display: inline;
-  vertical-align: baseline;
-  height: 1em;
+  font-weight: 600;
 }
 
 /* ═══════════════════════════════════════════

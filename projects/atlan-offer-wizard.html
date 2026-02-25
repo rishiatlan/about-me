@@ -95,11 +95,20 @@
         <a href="https://www.linkedin.com/in/rishibanerjee/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <p class="footer-copy">&copy; 2026 Rishi Banerjee</p>
-      <p class="footer-analytics">You are visitor <img src="https://rishisite.goatcounter.com/counter//about-me/projects/atlan-offer-wizard.html.svg" alt="" class="visitor-counter" onerror="this.alt='#'"> to this page</p>
+      <p class="footer-analytics">You are visitor <span class="visitor-counter">#</span> to this page</p>
     </div>
   </footer>
 
   <script data-goatcounter="https://rishisite.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    fetch('https://rishisite.goatcounter.com/counter/' + encodeURIComponent(location.pathname.replace(/\/$/, '') || '/') + '.json')
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var el = document.querySelector('.visitor-counter');
+        if (el && d.count) el.textContent = d.count;
+      })
+      .catch(function() {});
+  </script>
   <script src="../js/main.js"></script>
 </body>
 </html>
