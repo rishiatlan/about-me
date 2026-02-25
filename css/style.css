@@ -603,6 +603,23 @@ section.alt-bg {
   color: var(--color-text-secondary);
 }
 
+.footer-analytics {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.footer-analytics a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+}
+
+.footer-analytics a:hover {
+  color: var(--color-accent);
+}
+
 /* ═══════════════════════════════════════════
    Project Detail Pages
    ═══════════════════════════════════════════ */
