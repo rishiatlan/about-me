@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Prompt Optimizer MCP — Rishi Banerjee</title>
-  <meta name="description" content="An MCP server that analyzes, scores, and compiles prompts for maximum impact and minimum cost — zero LLM calls, all deterministic.">
+  <meta name="description" content="An MCP server that analyzes, scores, and compiles prompts for maximum impact and minimum cost. Zero LLM calls, all deterministic.">
 
   <meta property="og:title" content="Claude Prompt Optimizer MCP — Rishi Banerjee">
   <meta property="og:description" content="Prompt quality gate that scores and optimizes prompts before execution. Zero LLM calls, all deterministic.">
@@ -39,7 +39,7 @@
         Back to projects
       </a>
       <h1>Claude Prompt Optimizer MCP</h1>
-      <p class="hero-subtitle">An MCP server that analyzes, scores, and compiles prompts for maximum impact and minimum cost — zero LLM calls, all deterministic.</p>
+      <p class="hero-subtitle">An MCP server that analyzes, scores, and compiles prompts for maximum impact and minimum cost. Zero LLM calls, all deterministic.</p>
       <div class="project-tags" style="margin-top: 1rem;">
         <span class="tag">TypeScript</span>
         <span class="tag">MCP</span>
@@ -60,25 +60,25 @@
     <div class="container">
 
       <h2>The problem</h2>
-      <p>Vague prompts waste tokens, produce weak outputs, and cost more than they should. Most people don't realize their prompt is ambiguous until after Claude has already processed it. There's no pre-flight check — no way to know if your prompt will produce the output you actually wanted before spending the tokens.</p>
+      <p>Vague prompts waste tokens, produce weak outputs, and cost more than they should. Most people don't realize their prompt is ambiguous until after Claude has already processed it. There's no pre-flight check, no way to know if your prompt will produce the output you actually wanted before spending the tokens.</p>
 
       <h2>What I built</h2>
-      <p>An MCP server with 5 tools that acts as a prompt quality gate before execution. The key constraint: zero LLM calls. All analysis is deterministic — regex, heuristics, and rule engines. This means the optimizer itself costs nothing to run and adds negligible latency.</p>
+      <p>An MCP server with 5 tools that acts as a prompt quality gate before execution. The key constraint: zero LLM calls. All analysis is deterministic: regex, heuristics, and rule engines. This means the optimizer itself costs nothing to run and adds negligible latency.</p>
 
       <h2>The 5 tools</h2>
       <ul>
-        <li><strong>optimize_prompt</strong> — Analyzes raw prompts, detects ambiguities across 10 rules, scores quality 0-100, and estimates token cost</li>
-        <li><strong>refine_prompt</strong> — Iterative refinement loop that incorporates answers to blocking questions and re-scores</li>
-        <li><strong>approve_prompt</strong> — Sign-off gate that refuses to approve if blocking questions remain unanswered</li>
-        <li><strong>estimate_cost</strong> — Standalone token estimator for any text, with model-specific pricing</li>
-        <li><strong>compress_context</strong> — Context pruner that strips irrelevant code and docs before submission (57% token savings in testing)</li>
+        <li><strong>optimize_prompt</strong>: Analyzes raw prompts, detects ambiguities across 10 rules, scores quality 0-100, and estimates token cost</li>
+        <li><strong>refine_prompt</strong>: Iterative refinement loop that incorporates answers to blocking questions and re-scores</li>
+        <li><strong>approve_prompt</strong>: Sign-off gate that refuses to approve if blocking questions remain unanswered</li>
+        <li><strong>estimate_cost</strong>: Standalone token estimator for any text, with model-specific pricing</li>
+        <li><strong>compress_context</strong>: Context pruner that strips irrelevant code and docs before submission (57% token savings in testing)</li>
       </ul>
 
       <h2>How it works</h2>
-      <p>The optimizer classifies each prompt against 13 task-type patterns — code, writing, research, planning, analysis, communication, data, and more. It auto-detects audience, tone, and platform (across 19 audience patterns and 9 platforms including Slack, LinkedIn, and email), applies task-type-aware goal enrichment, and uses intent-first classification to prevent misclassifying writing prompts as code. It also detects multi-task overload, identifies high-risk domains, and recommends the right model tier (Haiku for simple tasks, Sonnet for moderate, Opus for complex). The compiled output uses XML-tagged Anthropic-optimized formatting — structured for maximum signal extraction by Claude.</p>
+      <p>The optimizer classifies each prompt against 13 task-type patterns (code, writing, research, planning, analysis, communication, data, and more). It auto-detects audience, tone, and platform (across 19 audience patterns and 9 platforms including Slack, LinkedIn, and email), applies task-type-aware goal enrichment, and uses intent-first classification to prevent misclassifying writing prompts as code. It also detects multi-task overload, identifies high-risk domains, and recommends the right model tier (Haiku for simple tasks, Sonnet for moderate, Opus for complex). The compiled output uses XML-tagged Anthropic-optimized formatting, structured for maximum signal extraction by Claude.</p>
 
       <h2>Why it matters</h2>
-      <p>Every prompt that goes through this server is clearer, cheaper, and more likely to produce the output you actually wanted. The 57% context compression alone means you can fit substantially more relevant information into each API call. And because the entire system is deterministic, it runs at zero marginal cost — no API calls, no token spend, no latency tax.</p>
+      <p>Every prompt that goes through this server is clearer, cheaper, and more likely to produce the output you actually wanted. The 57% context compression alone means you can fit substantially more relevant information into each API call. And because the entire system is deterministic, it runs at zero marginal cost: no API calls, no token spend, no latency.</p>
 
     </div>
   </section>

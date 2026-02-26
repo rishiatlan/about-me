@@ -68,28 +68,28 @@
     <div class="container">
 
       <h2>The problem</h2>
-      <p>Content creation is manual, repetitive, and doesn't scale. Making even one educational video per day requires scripting, illustration, voiceover, editing, and publishing. Most creators burn out before they hit consistency. What if the entire pipeline — from idea to upload — could run itself and get better over time?</p>
+      <p>Content creation is manual, repetitive, and doesn't scale. Making even one educational video per day requires scripting, illustration, voiceover, editing, and publishing. Most creators burn out before they hit consistency. What if the entire pipeline, from idea to upload, could run itself and get better over time?</p>
 
       <h2>What I built</h2>
-      <p>BlinkyOwl is an 8-stage autonomous pipeline that runs daily at 3 AM via launchd, producing educational YouTube Shorts for kids ages 4-7. No human touches the process — from topic selection to YouTube upload, everything is automated with built-in self-improvement loops.</p>
+      <p>BlinkyOwl is an 8-stage autonomous pipeline that runs daily at 3 AM via launchd, producing educational YouTube Shorts for kids ages 4-7. No human touches the process. From topic selection to YouTube upload, everything is automated with built-in self-improvement loops.</p>
       <div class="architecture-block">Script Engine → Safety Gates → Media Generation → Video Rendering → YouTube Upload → Cross-Post → Analytics → Feedback Loop</div>
 
       <h2>Key capabilities</h2>
       <ul>
-        <li><strong>LLM-driven scripts with Thompson Sampling</strong> — topic selection self-improves based on engagement data, so the system gets smarter about what resonates over time</li>
-        <li><strong>51 modular SVG scene components</strong> — frame-based animations assembled procedurally for each video, creating visual variety without manual design</li>
-        <li><strong>Procedural music generation</strong> — ambient pads, pentatonic melodies, and percussion generated from scratch for each video</li>
-        <li><strong>Per-word lip sync</strong> — edge-tts narration with gTTS fallback, synced at the word level to animated characters</li>
-        <li><strong>Remotion (React/TypeScript) rendering</strong> — 1080x1920 vertical video rendered programmatically with full animation control</li>
-        <li><strong>4-tier safety gates</strong> — content filtering with COPPA compliance baked in at every stage</li>
-        <li><strong>Staggered publishing</strong> — uploads scheduled at optimal times (7AM, 12PM, 3:30PM, 6:30PM IST) for audience reach</li>
-        <li><strong>Epsilon-greedy A/B testing</strong> — title variants tested automatically, with winning patterns fed back into the script engine</li>
-        <li><strong>Live observability dashboard</strong> — real-time monitoring of pipeline health, upload status, and engagement metrics</li>
+        <li><strong>LLM-driven scripts with Thompson Sampling</strong>: topic selection self-improves based on engagement data, so the system gets smarter about what resonates over time</li>
+        <li><strong>51 modular SVG scene components</strong>: frame-based animations assembled procedurally for each video, creating visual variety without manual design</li>
+        <li><strong>Procedural music generation</strong>: ambient pads, pentatonic melodies, and percussion generated from scratch for each video</li>
+        <li><strong>Per-word lip sync</strong>: edge-tts narration with gTTS fallback, synced at the word level to animated characters</li>
+        <li><strong>Remotion (React/TypeScript) rendering</strong>: 1080x1920 vertical video rendered programmatically with full animation control</li>
+        <li><strong>4-tier safety gates</strong>: content filtering with COPPA compliance baked in at every stage</li>
+        <li><strong>Staggered publishing</strong>: uploads scheduled at optimal times (7AM, 12PM, 3:30PM, 6:30PM IST) for audience reach</li>
+        <li><strong>Epsilon-greedy A/B testing</strong>: title variants tested automatically, with winning patterns fed back into the script engine</li>
+        <li><strong>Live observability dashboard</strong>: real-time monitoring of pipeline health, upload status, and engagement metrics</li>
       </ul>
 
       <h2>Why it matters</h2>
-      <p>390 passing tests across unit, integration, regression, and end-to-end suites. The entire system runs on free-tier infrastructure — Groq for LLM calls, Gemini for supplementary generation, edge-tts for narration, Pollinations.ai for images, Surge.sh for dashboard hosting. Zero monthly cost.</p>
-      <p>BlinkyOwl demonstrates that a fully autonomous, self-improving content system can run at zero cost with compounding output quality. The self-learning loop means every day's output informs the next — topics get sharper, thumbnails get more clickable, and engagement compounds.</p>
+      <p>390 passing tests across unit, integration, regression, and end-to-end suites. The entire system runs on free-tier infrastructure: Groq for LLM calls, Gemini for supplementary generation, edge-tts for narration, Pollinations.ai for images, Surge.sh for dashboard hosting. Zero monthly cost.</p>
+      <p>BlinkyOwl demonstrates that a fully autonomous, self-improving content system can run at zero cost with compounding output quality. The self-learning loop means every day's output informs the next. Topics get sharper, thumbnails get more clickable, and engagement compounds.</p>
 
     </div>
   </section>
