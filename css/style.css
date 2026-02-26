@@ -370,6 +370,16 @@ section.alt-bg {
   }
 }
 
+div.project-card {
+  cursor: default;
+}
+
+div.project-card:hover {
+  transform: none;
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
 .projects-view-all {
   text-align: center;
   margin-top: var(--space-xl);
