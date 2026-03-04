@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rishiatlan.github.io/about-me/sitemap.xml
+Sitemap: https://rishi-banerjee1.github.io/about-me/sitemap.xml

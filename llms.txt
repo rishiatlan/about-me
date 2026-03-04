@@ -12,7 +12,7 @@ Rishi Banerjee owns Global R&D Talent Strategy and Acquisition at Atlan (Enginee
 - BlinkyOwl: Autonomous YouTube Shorts generator with self-learning
 
 ## Links
-- Portfolio: https://rishiatlan.github.io/about-me/
+- Portfolio: https://rishi-banerjee1.github.io/about-me/
 - LinkedIn: https://www.linkedin.com/in/rishibanerjee/
-- GitHub: https://github.com/rishiatlan
+- GitHub: https://github.com/rishi-banerjee1
 - Book: https://www.amazon.in/dp/B0FQMWW9RR
