@@ -5,5 +5,5 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+.astro/
 dist/
-*.pdf
