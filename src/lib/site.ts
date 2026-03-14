@@ -3,7 +3,7 @@ export const SITE = {
   site: "https://rishi-banerjee1.github.io",
   basePath: "/about-me",
   description:
-    "Director of Talent Acquisition at Atlan. Runs R&D hiring across Engineering, Product, Design, IT, and Security. Also builds the internal tools — evaluators, offer generators, prompt governance, candidate research agents.",
+    "Business leader who runs R&D hiring at Atlan and builds the AI tools his team uses daily. 20+ years in talent, 12+ products shipped, 1 book published.",
   email: "rpbanerjee@outlook.com",
   linkedin: "https://www.linkedin.com/in/rishibanerjee/",
   github: "https://github.com/rishi-banerjee1",
@@ -30,9 +30,9 @@ export const navLinks = [
 
 export const heroStats = [
   { value: "20+", label: "Years in TA" },
-  { value: "100+", label: "Leadership Hires" },
-  { value: "10+", label: "Countries" },
-  { value: "8+", label: "Products Shipped" }
+  { value: "12+", label: "Tools Shipped" },
+  { value: "10+", label: "Countries Hired In" },
+  { value: "1", label: "Published Book" }
 ];
 
 export const organizations = [
@@ -52,10 +52,11 @@ export const experience = [
     companyHref: "https://atlan.com",
     subtitle: "The Missing Context Layer for Data & AI",
     bullets: [
-      "Own R&D hiring across Engineering, Product, Design, IT, and Security. Lead a team of talent partners, sourcers, and coordinators.",
-      "Advise leadership on org design, role scoping, and sequencing hires against product roadmaps.",
-      "Designed the talent operating model: intake rigor, scorecards, governance, hiring investment planning.",
-      "Reduced time-to-hire by 40%. Quality bar and candidate experience held."
+      "Lead R&D hiring across Engineering, Product, Design, IT, and Security. Own the team, the process, and the tooling.",
+      "Advise founders and leadership on org design, capability gaps, role scoping, and sequencing hires against product bets.",
+      "Designed the talent operating model from scratch: structured intake, calibrated scorecards, governance frameworks, hiring investment planning.",
+      "Built 8+ internal AI tools the team uses daily — interview evaluators, candidate research agents, offer page systems, JD generators.",
+      "Cut time-to-hire by 40% while holding the quality bar and candidate experience scores."
     ]
   },
   {
@@ -108,19 +109,19 @@ export const experience = [
 
 export const expertise = [
   {
-    title: "Talent Systems, Not Heroics",
+    title: "Hiring as a System, Not a Hustle",
     text:
-      "I design hiring operating systems: role architecture, evaluation loops, calibration, governance, and sequencing. Repeatability over dependence on individual interviewers having a good day."
+      "Most recruiting teams run on muscle memory and tribal knowledge. I design the operating system underneath: structured scorecards, calibrated evaluation loops, intake rigor, governance. The goal is that a great hiring decision doesn't depend on which interviewer had coffee that morning."
   },
   {
-    title: "Executive Talent Advisory",
+    title: "Founder-Level Talent Advisory",
     text:
-      "I work with founders and leadership teams on org design, capability gaps, investment pacing, and leadership hiring. The work is tied to company bets, not headcount targets."
+      "I sit in the room where org design happens — not waiting for a req to land. Capability gaps, hiring sequencing, leadership profiles, comp philosophy. The question isn't 'who do we hire?' — it's 'what bet are we making, and who makes it succeed?'"
   },
   {
-    title: "AI-Native Recruiting Tools",
+    title: "If It Repeats, I Automate It",
     text:
-      "I build the tools my team uses daily — evaluators, offer experiences, prompt governance, usage tracking, candidate research agents. If a process runs often enough, it should be software."
+      "Interview evaluators, offer page generators, candidate research agents, prompt governance, API usage dashboards — I build these because I got tired of watching my team do the same judgment call 200 times with no system backing them up. Most of these are internal. Some escaped into open source."
   }
 ];
 
@@ -149,7 +150,7 @@ export const book = {
   subtitle: "Building High-Density Teams in the Age of AI",
   href: "https://www.amazon.in/dp/B0FQMWW9RR",
   description:
-    "A practical framework for building high-performing teams when AI changes what individuals can deliver. Covers hiring doctrine, evaluation design, and scaling judgment across growing organizations."
+    "AI changes what one person can deliver — which means hiring doctrine needs to change too. This book is the framework I wish existed when I started building teams: how to hire for density over headcount, design evaluations that actually predict performance, and scale judgment without losing it."
 };
 
 export const education = [

@@ -24,7 +24,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: SITE.name,
-  jobTitle: "Director of Talent Acquisition",
+  jobTitle: "R&D Talent Strategy & Talent Acquisition Leader",
   description: SITE.description,
   worksFor: {
     "@type": "Organization",
@@ -48,7 +48,7 @@ const jsonLd = {
 };
 ---
 <BaseLayout
-  title="Rishi Banerjee - TA Leader Who Builds Systems"
+  title="Rishi Banerjee - Business Leader, Builder, Talent Strategist"
   description={SITE.description}
   jsonLd={jsonLd}
 >
@@ -58,14 +58,14 @@ const jsonLd = {
     <section class="hero-section">
       <div class="container hero-grid">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow">TA Leader Who Builds Systems &amp; Ships Tools</p>
+          <p class="eyebrow">Business Leader. Builder. Talent Strategist.</p>
           <h1>{SITE.name}</h1>
           <p class="hero-text">
-            I run R&amp;D hiring at <a href={SITE.company} target="_blank" rel="noopener">Atlan</a> — Engineering, Product, Design, IT, Security.
-            I also build the tools: interview evaluators, prompt governance, offer experiences, candidate research agents.
+            I lead R&amp;D hiring at <a href={SITE.company} target="_blank" rel="noopener">Atlan</a> — Engineering, Product, Design, IT, Security.
+            But I don't just run recruiting. I build the systems underneath it: interview evaluators, prompt governance frameworks, candidate research agents, offer page generators, an npm package, a macOS menubar app, and a book on hiring in the age of AI.
           </p>
           <p class="hero-text hero-text-muted">
-            8+ products shipped. Most are internal systems. A few are public — an npm package, a macOS app, a GitHub Action, and a book.
+            Most talent leaders optimize funnels. I build the infrastructure underneath them. When a judgment call happens 200 times with no system backing it up, I turn it into software.
           </p>
           <div class="button-row">
             <a href={SITE.linkedin} class="button button-primary" target="_blank" rel="noopener">LinkedIn</a>
@@ -108,14 +108,15 @@ const jsonLd = {
     <section id="about" class="section section-alt" data-reveal>
       <div class="container prose-block">
         <p class="eyebrow">About</p>
-        <h2>Background</h2>
+        <h2>The short version</h2>
         <p>
-          20+ years in talent acquisition. Built and scaled TA functions across APAC, North America, and Europe.
-          Currently own R&amp;D hiring at Atlan across five functions.
+          20 years of building and scaling talent functions across APAC, North America, and Europe. Currently leading R&amp;D hiring at Atlan across five functions — Engineering, Product, Design, IT, and Security.
         </p>
         <p>
-          I also build the internal tools my team uses — evaluators, JD generators, offer page systems, candidate research agents.
-          The reasoning is simple: if a judgment process runs often enough, it should be software, not oral tradition.
+          The building started because I kept watching the same problems repeat: inconsistent interview feedback, offer pages that looked like they were made in 2011, candidate research that took hours and lived in someone's head. So I started writing code. Not scripts — real products, with UIs, APIs, and users.
+        </p>
+        <p>
+          Now it's the thing I'm most known for internally. The team runs on systems I built. Externally, some of those tools are open source — an npm package with 700+ installs, a macOS app, a GitHub Action used in CI pipelines, and a prompt governance framework that other teams have adopted.
         </p>
       </div>
     </section>
@@ -151,7 +152,7 @@ const jsonLd = {
     <section id="expertise" class="section section-alt" data-reveal>
       <div class="container">
         <p class="eyebrow">Expertise</p>
-        <h2>What I do</h2>
+        <h2>How I operate</h2>
         <div class="three-up-grid">
           {expertise.map((item) => (
             <article class="panel-card">
@@ -252,7 +253,7 @@ const jsonLd = {
         <p class="eyebrow">Get In Touch</p>
         <h2>Let’s talk</h2>
         <p>
-          Hiring systems, AI tooling, or comparing notes on running talent at scale. I’m easy to reach.
+          Whether it’s hiring systems, AI tooling for talent teams, org design, or just comparing notes on scaling recruiting without losing your mind — I’m easy to reach.
         </p>
         <div class="button-row">
           <a href={`mailto:${SITE.email}`} class="button button-primary">Email me</a>
