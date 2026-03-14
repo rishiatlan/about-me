@@ -3,12 +3,12 @@ title: BlinkyOwl
 shortSummary: Fully autonomous kids video pipeline with safety gates, observability, and self-improving feedback loops.
 summary: Production-grade system that generates, publishes, and self-improves educational YouTube Shorts for kids. Private repo, but with public proof via channel and observability dashboard.
 category: Autonomous Media System
-section: flagship
+section: supporting
 year: 2026
-order: 3
-featured: true
+order: 10
+featured: false
 detail: true
-status: flagship
+status: active
 visibility: private
 tags:
   - Python
