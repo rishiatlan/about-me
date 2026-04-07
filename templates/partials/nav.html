@@ -1,0 +1,38 @@
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a href="{{ config.base_url }}" class="brand">{{ config.extra.name }}</a>
+    <div class="nav-actions">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        aria-pressed="false"
+        data-theme-toggle
+      >
+        <span class="theme-chip" data-theme-label>Dark</span>
+      </button>
+    </div>
+    <ul id="primary-navigation" class="nav-links" data-nav-menu>
+      {% for link in config.extra.nav_links %}
+        <li><a href="{{ config.base_url ~ link.href }}">{{ link.label }}</a></li>
+      {% endfor %}
+      {% if current_path is containing("/projects") %}
+        <li><a href="{{ get_url(path='@/projects/_index.md') }}">All Projects</a></li>
+      {% endif %}
+      <li><a href="{{ config.extra.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="{{ config.extra.github }}" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</nav>

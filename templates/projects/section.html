@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Rishi Banerjee{% endblock %}
+{% block description %}Flagship systems, AI tools, hiring products, and supporting utilities from Rishi Banerjee's GitHub and portfolio.{% endblock %}
+{% block og_title %}Projects - Rishi Banerjee{% endblock %}
+{% block og_description %}Flagship systems, AI tools, hiring products, and supporting utilities from Rishi Banerjee's GitHub and portfolio.{% endblock %}
+{% block tw_title %}Projects - Rishi Banerjee{% endblock %}
+{% block tw_description %}Flagship systems, AI tools, hiring products, and supporting utilities from Rishi Banerjee's GitHub and portfolio.{% endblock %}
+
+{% block body %}
+{% include "partials/nav.html" %}
+
+{% set all_projects = section.pages | sort(attribute="extra.order") %}
+{% set flagship = all_projects | filter(attribute="extra.featured", value=true) %}
+{% set active_details = all_projects | filter(attribute="extra.featured", value=false) | filter(attribute="extra.detail", value=true) %}
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container page-hero-inner" data-reveal>
+      <a href="{{ config.base_url }}" class="back-link">&larr; Back to home</a>
+      <p class="eyebrow">Projects</p>
+      <h1>Systems I've shipped</h1>
+      <p class="hero-text">
+        Flagship products first, then active systems, then supporting tools and earlier work.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Flagship</p>
+      <h2>Production systems</h2>
+      <div class="project-grid">
+        {% for project in flagship %}
+          {% set card_title = project.title %}
+          {% set card_summary = project.extra.shortSummary | default(value=project.extra.summary) %}
+          {% set card_tags = project.extra.tags %}
+          {% set card_href = project.permalink %}
+          {% set card_external = false %}
+          {% include "partials/project-card.html" %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Active</p>
+      <h2>Current systems</h2>
+      <div class="project-grid project-grid-compact">
+        {% for project in active_details %}
+          {% set card_title = project.title %}
+          {% set card_summary = project.extra.shortSummary | default(value=project.extra.summary) %}
+          {% set card_tags = project.extra.tags %}
+          {% set card_href = project.permalink %}
+          {% set card_external = false %}
+          {% include "partials/project-card.html" %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" data-reveal>
+    <div class="container">
+      {% for section_data in config.extra.supporting_sections %}
+        <div class="stack-block">
+          <div class="stack-intro">
+            <p class="eyebrow">{{ section_data.eyebrow }}</p>
+            <h2>{{ section_data.title }}</h2>
+            <p>{{ section_data.description }}</p>
+          </div>
+          <div class="project-grid project-grid-compact">
+            {% for proj in section_data.projects %}
+              {% set card_title = proj.title %}
+              {% set card_summary = proj.summary %}
+              {% set card_tags = proj.tags %}
+              {% set card_href = proj.href | default(value="") %}
+              {% set card_external = proj.external | default(value=false) %}
+              {% include "partials/project-card.html" %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section cta-section" data-reveal>
+    <div class="container cta-card">
+      <p class="eyebrow">Private Projects</p>
+      <h2>Architecture walkthroughs available on request</h2>
+      <p>
+        Private repos contain internal workflow, candidate data, or proprietary operating detail.
+        Happy to walk through the architecture and decisions for any project listed here.
+      </p>
+      <div class="button-row">
+        <a href="mailto:{{ config.extra.email }}" class="button button-primary">Request a walkthrough</a>
+        <a href="{{ config.extra.linkedin }}" class="button button-secondary" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

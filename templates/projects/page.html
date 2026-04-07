@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - Rishi Banerjee{% endblock %}
+{% block description %}{{ page.extra.summary }}{% endblock %}
+{% set og_type = "article" %}
+{% block og_title %}{{ page.title }} - Rishi Banerjee{% endblock %}
+{% block og_description %}{{ page.extra.summary }}{% endblock %}
+{% block tw_title %}{{ page.title }} - Rishi Banerjee{% endblock %}
+{% block tw_description %}{{ page.extra.summary }}{% endblock %}
+
+{% block body %}
+{% include "partials/nav.html" %}
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container page-hero-inner" data-reveal>
+      <a href="{{ get_url(path='@/projects/_index.md') }}" class="back-link">&larr; Back to projects</a>
+      <p class="eyebrow">{{ page.extra.category }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="hero-text">{{ page.extra.summary }}</p>
+      <div class="tag-list" style="margin-top: 1.35rem;">
+        <span class="tag">{{ page.extra.year }}</span>
+        {% for tag in page.extra.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="button-row">
+        {% if page.extra.homepage %}
+          <a href="{{ page.extra.homepage }}" class="button button-secondary" target="_blank" rel="noopener">Product site</a>
+        {% endif %}
+        {% if page.extra.github %}
+          <a href="{{ page.extra.github }}" class="button button-secondary" target="_blank" rel="noopener">GitHub</a>
+        {% endif %}
+        {% if page.extra.npm %}
+          <a href="{{ page.extra.npm }}" class="button button-secondary" target="_blank" rel="noopener">npm</a>
+        {% endif %}
+        {% if page.extra.marketplace %}
+          <a href="{{ page.extra.marketplace }}" class="button button-secondary" target="_blank" rel="noopener">GitHub Action</a>
+        {% endif %}
+        {% if page.extra.youtube %}
+          <a href="{{ page.extra.youtube }}" class="button button-secondary" target="_blank" rel="noopener">YouTube</a>
+        {% endif %}
+        {% if page.extra.dashboard %}
+          <a href="{{ page.extra.dashboard }}" class="button button-secondary" target="_blank" rel="noopener">Live dashboard</a>
+        {% endif %}
+        {% if page.extra.homebrew %}
+          <a href="{{ page.extra.homebrew }}" class="button button-secondary" target="_blank" rel="noopener">Homebrew</a>
+        {% endif %}
+        {% if page.extra.contactHref %}
+          <a href="{{ page.extra.contactHref }}" class="button button-secondary" target="_blank" rel="noopener">{{ page.extra.contactLabel | default(value="Request walkthrough") }}</a>
+        {% endif %}
+      </div>
+      {% if page.extra.metrics %}
+        <div class="metrics-row">
+          {% for metric in page.extra.metrics %}
+            <span class="metric-pill">{{ metric }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <div class="container detail-layout">
+      <article class="detail-prose">
+        {{ page.content | safe }}
+      </article>
+      <aside class="detail-sidebar">
+        <div class="panel-card">
+          <p class="eyebrow">Summary</p>
+          <h3>What it does</h3>
+          <p>{{ page.extra.shortSummary }}</p>
+        </div>
+        <div class="panel-card">
+          <p class="eyebrow">Access</p>
+          {% if page.extra.visibility == "private" %}
+            <h3>Private repo</h3>
+            <p>Code is internal. Architecture and design decisions documented here.</p>
+          {% else %}
+            <h3>Public repo</h3>
+            <p>Code is public. Links above point to the repo and live surfaces.</p>
+          {% endif %}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt cta-section" data-reveal>
+    <div class="container cta-card">
+      <p class="eyebrow">More Projects</p>
+      <h2>See what else I've built</h2>
+      <p>
+        Hiring tools, prompt governance, automation systems, and open-source utilities.
+      </p>
+      <div class="button-row">
+        <a href="{{ get_url(path='@/projects/_index.md') }}" class="button button-primary">Browse more projects</a>
+        <a href="mailto:{{ config.extra.email }}" class="button button-secondary">Email me</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% block title %}Rishi Banerjee - Business Leader, Builder, Talent Strategist{% endblock %}
+{% block description %}{{ config.description }}{% endblock %}
+{% block og_title %}Rishi Banerjee - Business Leader, Builder, Talent Strategist{% endblock %}
+{% block og_description %}{{ config.description }}{% endblock %}
+{% block tw_title %}Rishi Banerjee - Business Leader, Builder, Talent Strategist{% endblock %}
+{% block tw_description %}{{ config.description }}{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ config.extra.name | safe }}",
+  "jobTitle": "R&D Talent Strategy & Talent Acquisition Leader",
+  "description": "{{ config.description | safe }}",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Atlan",
+    "url": "{{ config.extra.company | safe }}"
+  },
+  "url": "{{ config.base_url | safe }}",
+  "image": "{{ config.base_url | safe }}/assets/headshot.jpg",
+  "sameAs": ["{{ config.extra.linkedin | safe }}", "{{ config.extra.github | safe }}"],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "IIM Nagpur"
+  },
+  "knowsAbout": ["Talent Acquisition", "AI systems", "Prompt governance", "Evaluation frameworks", "Hiring systems"]
+}
+</script>
+{% endblock %}
+
+{% block body %}
+{% include "partials/nav.html" %}
+
+{% set projects_section = get_section(path="projects/_index.md") %}
+{% set featured_projects = projects_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.order") %}
+
+<main id="main-content">
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Business Leader. Builder. Talent Strategist.</p>
+        <h1>{{ config.extra.name }}</h1>
+        <p class="hero-text">
+          I lead R&amp;D hiring at <a href="{{ config.extra.company }}" target="_blank" rel="noopener">Atlan</a> &mdash; Engineering, Product, Design, IT, Security.
+          But I don't just run recruiting. I build the systems underneath it: interview evaluators, prompt governance frameworks, candidate research agents, offer page generators, an npm package, a macOS menubar app, and a book on hiring in the age of AI.
+        </p>
+        <p class="hero-text hero-text-muted">
+          Most talent leaders optimize funnels. I build the infrastructure underneath them. When a judgment call happens 200 times with no system backing it up, I turn it into software.
+        </p>
+        <div class="button-row">
+          <a href="{{ config.extra.linkedin }}" class="button button-primary" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="{{ config.extra.prompt_control_plane }}" class="button button-secondary" target="_blank" rel="noopener">Prompt Control Plane</a>
+          <a href="{{ config.extra.github }}" class="button button-secondary" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="stats-grid">
+          {% for stat in config.extra.hero_stats %}
+            <div class="stat-card">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="hero-aside" data-reveal>
+        <img src="{{ get_url(path='assets/headshot.jpg') }}" alt="Rishi Banerjee" class="hero-photo" />
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-section" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Career Highlights</p>
+      <div class="logo-row">
+        {% for org in config.extra.organizations %}
+          <a href="{{ org.href }}" class="logo-link">
+            <img
+              src="{{ get_url(path=org.logo | trim_start_matches(pat='/')) }}"
+              alt="{{ org.name }}"
+              class="logo-image{% if org.invert_in_dark %} logo-image-invert{% endif %}"
+            />
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section section-alt" data-reveal>
+    <div class="container prose-block">
+      <p class="eyebrow">About</p>
+      <h2>The short version</h2>
+      <p>
+        20 years of building and scaling talent functions across APAC, North America, and Europe. Currently leading R&amp;D hiring at Atlan across five functions &mdash; Engineering, Product, Design, IT, and Security.
+      </p>
+      <p>
+        The building started because I kept watching the same problems repeat: inconsistent interview feedback, offer pages that looked like they were made in 2011, candidate research that took hours and lived in someone's head. So I started writing code. Not scripts &mdash; real products, with UIs, APIs, and users.
+      </p>
+      <p>
+        Now it's the thing I'm most known for internally. The team runs on systems I built. Externally, some of those tools are open source &mdash; an npm package with 700+ installs, a macOS app, a GitHub Action used in CI pipelines, and a prompt governance framework that other teams have adopted.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience" class="section" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Experience</p>
+      <h2>Career</h2>
+      <div class="timeline">
+        {% for item in config.extra.experience %}
+          <article class="timeline-item" id="{{ item.id }}">
+            <div class="timeline-date">{{ item.date }}</div>
+            <div class="timeline-body">
+              <h3>{{ item.title }}</h3>
+              <p class="timeline-company">
+                {% if item.company_href %}
+                  <a href="{{ item.company_href }}" target="_blank" rel="noopener">{{ item.company }}</a>
+                {% else %}
+                  {{ item.company }}
+                {% endif %}
+                {% if item.subtitle %} - {{ item.subtitle }}{% endif %}
+              </p>
+              <ul>
+                {% for bullet in item.bullets %}
+                  <li>{{ bullet }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" class="section section-alt" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Expertise</p>
+      <h2>How I operate</h2>
+      <div class="three-up-grid">
+        {% for item in config.extra.expertise %}
+          <article class="panel-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Book</p>
+          <h2>{{ config.extra.book.title }}</h2>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-content">
+          <h3>{{ config.extra.book.subtitle }}</h3>
+          <p>{{ config.extra.book.description }}</p>
+          <a href="{{ config.extra.book.href }}" class="button button-primary" target="_blank" rel="noopener">Read on Amazon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Testimonials</p>
+      <h2>What colleagues say</h2>
+      <div class="three-up-grid">
+        {% for item in config.extra.testimonials %}
+          <blockquote class="panel-card quote-card">
+            <p>"{{ item.quote }}"</p>
+            <footer>
+              <strong>{{ item.author }}</strong>
+              <span>{{ item.context }}</span>
+            </footer>
+          </blockquote>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section section-alt" data-reveal>
+    <div class="container">
+      <p class="eyebrow">Education &amp; Certifications</p>
+      <h2>Credentials</h2>
+      <div class="two-up-grid">
+        {% for item in config.extra.education %}
+          <article class="panel-card">
+            <h3>{{ item.title }}</h3>
+            <p class="subtle-label">{{ item.institution }}</p>
+            {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+            {% if item.tags %}
+              <div class="tag-list">
+                {% for tag in item.tags %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section" data-reveal>
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Flagship Projects</p>
+          <h2>Products I've built</h2>
+        </div>
+        <a href="{{ get_url(path='@/projects/_index.md') }}" class="text-link">View all projects</a>
+      </div>
+      <div class="project-grid">
+        {% for project in featured_projects %}
+          {% set card_title = project.title %}
+          {% set card_summary = project.extra.shortSummary | default(value=project.extra.summary) %}
+          {% set card_tags = project.extra.tags %}
+          {% set card_href = project.permalink %}
+          {% set card_external = false %}
+          {% include "partials/project-card.html" %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" data-reveal>
+    <div class="container cta-card">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Let's talk</h2>
+      <p>
+        Whether it's hiring systems, AI tooling for talent teams, org design, or just comparing notes on scaling recruiting without losing your mind &mdash; I'm easy to reach.
+      </p>
+      <div class="button-row">
+        <a href="mailto:{{ config.extra.email }}" class="button button-primary">Email me</a>
+        <a href="{{ config.extra.linkedin }}" class="button button-secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

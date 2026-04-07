@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-title">{{ config.extra.name }}</p>
+      <p class="footer-copy">
+        Business leader, builder, and talent strategist at Atlan.
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ config.base_url }}">Home</a>
+      <a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a>
+      <a href="{{ config.extra.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ config.extra.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:{{ config.extra.email }}">Email</a>
+    </div>
+    <p class="footer-meta">
+      Visitor count <span data-visitor-counter>#</span>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}" />
+    {% set page_url = current_url | default(value=config.base_url) %}
+    <link rel="canonical" href="{{ page_url }}" />
+    <meta name="keywords" content="Rishi Banerjee, Talent Acquisition, Atlan, AI systems, hiring, open source, MCP, prompt governance" />
+
+    {% set og_type = "website" %}
+    {% block og_type %}{% endblock %}
+    <meta property="og:type" content="{{ og_type }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}" />
+    {% set og_image = config.base_url ~ "/assets/headshot.jpg" %}
+    <meta property="og:image" content="{% block og_image %}{{ og_image }}{% endblock %}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% block tw_title %}{{ config.title }}{% endblock %}" />
+    <meta name="twitter:description" content="{% block tw_description %}{{ config.description }}{% endblock %}" />
+    <meta name="twitter:image" content="{{ og_image }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ get_url(path='css/global.css') }}" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const theme = stored === "dark" ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    {% block json_ld %}{% endblock %}
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    {% block body %}{% endblock %}
+    <script
+      data-goatcounter="https://rishisite.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+    <script>
+      const themeToggle = document.querySelector("[data-theme-toggle]");
+      const navToggle = document.querySelector("[data-nav-toggle]");
+      const navMenu = document.querySelector("[data-nav-menu]");
+      const root = document.documentElement;
+
+      if (themeToggle) {
+        const syncThemeButton = () => {
+          const isDark = root.dataset.theme === "dark";
+          themeToggle.setAttribute("aria-pressed", String(isDark));
+          themeToggle.querySelector("[data-theme-label]").textContent = isDark ? "Light" : "Dark";
+        };
+
+        syncThemeButton();
+        themeToggle.addEventListener("click", () => {
+          root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+          localStorage.setItem("theme", root.dataset.theme);
+          syncThemeButton();
+        });
+      }
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          const next = navMenu.classList.toggle("is-open");
+          navToggle.setAttribute("aria-expanded", String(next));
+        });
+
+        navMenu.addEventListener("click", (event) => {
+          if (event.target instanceof HTMLElement && event.target.tagName === "A") {
+            navMenu.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      const counter = document.querySelector("[data-visitor-counter]");
+      if (counter) {
+        fetch(
+          "https://rishisite.goatcounter.com/counter/" +
+            encodeURIComponent(location.pathname.replace(/\/$/, "") || "/") +
+            ".json"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.count) {
+              counter.textContent = data.count.replace(/[^0-9]/g, "") || data.count;
+            } else {
+              counter.textContent = "\u2014";
+            }
+          })
+          .catch(() => {
+            counter.textContent = "\u2014";
+          });
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>

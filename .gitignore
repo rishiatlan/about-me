@@ -4,6 +4,11 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Zola build output (docs/ is committed for GitHub Pages)
+public/
+
+# Legacy Astro (keep until migration confirmed)
 node_modules/
 .astro/
 dist/
