@@ -1,6 +1,6 @@
 base_url = "https://rishi-banerjee1.github.io/about-me"
 title = "Rishi Banerjee"
-description = "Global Head of Talent Acquisition at kAIgentic, building talent systems for enterprise AI. 20+ years in talent, 12+ tools shipped, 3 books published."
+description = "Global Head of Talent Acquisition at kAIgentic, the enterprise intelligence layer. 20+ years in talent, 12+ tools shipped, 3 books published."
 compile_sass = false
 generate_feeds = false
 minify_html = false
@@ -103,11 +103,11 @@ date = "May 2026 - Present"
 title = "Global Head of Talent Acquisition"
 company = "kAIgentic"
 company_href = "https://kaigentic.com"
-subtitle = "Agentic AI for enterprise transformation"
+subtitle = "Enterprise intelligence layer"
 bullets = [
-  "Lead global talent acquisition for an enterprise AI company building governed agents from tacit work knowledge.",
+  "Head global talent acquisition for the enterprise intelligence layer, a platform that turns tacit work knowledge into operational intelligence.",
   "Build the talent operating system for a Day 1 team with global ambition across Asia, Europe, North America, and Japan.",
-  "Partner with leadership on workforce design, hiring sequencing, and the talent density needed to scale agentic AI products."
+  "Partner with leadership on workforce design, hiring sequencing, and the talent density needed to scale the platform."
 ]
 
 [[extra.experience]]
@@ -118,10 +118,10 @@ company = "Atlan"
 company_href = "https://atlan.com"
 subtitle = "The Missing Context Layer for Data & AI"
 bullets = [
-  "Led R&D hiring across Engineering, Product, Design, IT, and Security. Owned the team, the process, and the tooling.",
+  "Headed R&D hiring across Engineering, Product, Design, IT, and Security. Owned the team, the process, and the tooling.",
   "Advised founders and leadership on org design, capability gaps, role scoping, and sequencing hires against product bets.",
   "Designed the talent operating model from scratch: structured scorecards, calibrated evaluation loops, intake rigor, governance frameworks, hiring investment planning.",
-  "Built 8+ internal AI tools the team uses daily: interview evaluators, candidate research agents, offer page systems, JD generators.",
+  "Built 8+ internal AI tools the team uses daily: interview evaluators, candidate research systems, offer page systems, JD generators.",
   "Cut time-to-hire by 40% while holding the quality bar and candidate experience scores.",
 ]
 
@@ -182,7 +182,7 @@ text = "I sit in the room where org design happens, not waiting for a req to lan
 
 [[extra.expertise]]
 title = "If It Repeats, I Automate It"
-text = "Interview evaluators, offer page generators, candidate research agents, prompt governance, API usage dashboards. I build these because I got tired of watching my team do the same judgment call 200 times with no system backing them up. Most of these are internal. Some escaped into open source."
+text = "Interview evaluators, offer page generators, candidate research systems, prompt governance, API usage dashboards. I build these because I got tired of watching my team do the same judgment call 200 times with no system backing them up. Most of these are internal. Some escaped into open source."
 
 # Testimonials
 [[extra.testimonials]]
@@ -255,7 +255,7 @@ external = true
 
 [[extra.supporting_sections.projects]]
 title = "Candidate Intel Agent"
-summary = "Parallel research agent that compiles candidate intelligence from resumes, GitHub, publications, and social signals into leveling and comp briefs."
+summary = "Parallel research platform that compiles candidate intelligence from resumes, GitHub, publications, and social signals into leveling and comp briefs."
 tags = ["AI", "Research", "Private"]
 visibility = "private"
 status = "active"
@@ -301,7 +301,7 @@ external = true
 
 [[extra.supporting_sections.projects]]
 title = "Hotel Concierge"
-summary = "Natural-language hotel search agent that profiles hotel DNA and explains why each recommendation fits, not just price."
+summary = "Natural-language hotel search platform that profiles hotel DNA and explains why each recommendation fits, not just price."
 tags = ["Python", "Search", "Public"]
 visibility = "public"
 status = "supporting"

@@ -4,8 +4,8 @@ weight = 8
 template = "projects/page.html"
 
 [extra]
-shortSummary = "Research and fleet management hub. Coordinates multiple agent projects, keeps docs aligned, enforces release discipline."
-summary = "Hub for AI product research, multi-agent project management, and documentation alignment across repos."
+shortSummary = "Research and fleet management hub. Coordinates multiple platform projects, keeps docs aligned, enforces release discipline."
+summary = "Hub for AI product research, platform project management, and documentation alignment across repos."
 category = "Agent Orchestration"
 section = "active"
 year = 2026
@@ -14,8 +14,8 @@ featured = false
 detail = true
 status = "active"
 visibility = "private"
-tags = ["Multi-agent", "Research", "Skills", "Fleet management"]
-metrics = ["4 parallel research subagents", "Release discipline", "Doc alignment tooling"]
+tags = ["Platform", "Research", "Skills", "Fleet management"]
+metrics = ["4 parallel research workflows", "Release discipline", "Doc alignment tooling"]
 contactHref = "mailto:rpbanerjee@outlook.com?subject=Rishi%20Ideas"
 contactLabel = "Request walkthrough"
 +++
@@ -26,7 +26,7 @@ Once you have multiple AI projects running at once, inconsistency is the default
 
 ## What I built
 
-A coordination layer. Four parallel research subagents vet product ideas against cost, effort, and monetization filters. Fleet management audits all repos for stale docs, hardcoded dates, and missing error handling. Release tooling enforces a consistent ship sequence.
+A coordination layer. Four parallel research workflows vet product ideas against cost, effort, and monetization filters. Fleet management audits all repos for stale docs, hardcoded dates, and missing error handling. Release tooling enforces a consistent ship sequence.
 
 ## Why it exists
 
